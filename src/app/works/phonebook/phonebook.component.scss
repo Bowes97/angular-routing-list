@@ -1,0 +1,27 @@
+h1{
+    color: red;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+}
+input:nth-child(1){
+    width: 79%;
+}
+input:nth-child(2){
+    width: 20%;
+}
+.search{
+    margin: 30px 0;
+}
+tr:hover{
+    background-color: lightgray;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+}
+.modal-body input{
+    width: 100%;
+    margin: 20px 0 ;
+}

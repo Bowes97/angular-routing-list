@@ -1,0 +1,18 @@
+<div class="choose">
+    <div class="works">
+        <h4>Last works > > ></h4>
+        <h4 (click)="cenzor()" [ngClass]="{'activeBtn': cenzorTrue}" [routerLink]="[ '/works/cenzor' ]"
+            routerLinkActive="active">Cenzor</h4>
+        <h4 (click)="usertask()" [ngClass]="{'activeBtn': usertaskTrue}" [routerLink]="[ '/works/userstask' ]"
+            routerLinkActive="active">Task</h4>
+        <h4 (click)="userlist()" [ngClass]="{'activeBtn': userlistTrue}" [routerLink]="[ '/works/userslist' ]"
+            routerLinkActive="active">Users</h4>
+        <h4 (click)="phone()" [ngClass]="{'activeBtn': phoneTrue}" [routerLink]="[ '/works/phonebook' ]"
+            routerLinkActive="active">Phone Book</h4>
+    </div>
+    <div class="back">
+        <h4 [routerLink]="[ '' ]" routerLinkActive="active">Back to >>> Home</h4>
+    </div>
+</div>
+<hr>
+<router-outlet></router-outlet>

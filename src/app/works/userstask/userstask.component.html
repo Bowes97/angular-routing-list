@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Plan your day!</h1>
+    <h2>User: Ivan Ivanov. Count of Task {{ arrtask.length }}</h2>
+    <hr>
+    <form name="f1">
+        <input type="text" name="newText" id="" [(ngModel)]="newText" class="form-control">
+        <input type="button" name="" id="" value="add" class="btn btn-success" (click)="addNewOBJ()">
+    </form>
+    <hr>
+    <table class="table">
+        <thead>
+            <th>#</th>
+            <th>Task</th>
+            <th>Check</th>
+            <th>Done/In Progres</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of arrtask; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{task.newTask}}</td>
+                <td><input (click)="changeStatus(task)" type="checkbox" name="" id="" class="checkbox"></td>
+                <td [ngStyle]="{'color': task.status ? 'green' : 'red'}">{{ task.status ? 'Done' : 'In Progres'}}</td>
+                <td><button class="btn btn-warning" (click)="editTask(i)">Edit</button></td>
+                <td><button (click)="deleteTask(i)" class="btn btn-danger" [disabled]="!task.status">Delete</button>
+                </td>
+            </tr>
+            <tr class="tr" *ngIf="isEdit">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" name="" id="" class="edit" [(ngModel)]="rewrite"></td>
+                <td><button class="btn btn-success" (click)="saveName()">Save</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

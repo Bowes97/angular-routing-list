@@ -1,0 +1,63 @@
+<div class="container">
+    <h1>My phone book!</h1>
+    <div class="search">
+        <form>
+            <input type="text" placeholder="search text goes here..." [(ngModel)]="person" name="person" class="form-control">
+            <input type="button" value="add phone" class="btn btn-success" (click)="openPopup()">
+        </form>
+    </div>
+    <hr>
+    <table class="table">
+        <thead>
+            <th (click)="first()">First name <i *ngIf="caretDown1" class="fas fa-caret-down"></i></th>
+            <th (click)="last()">Last name <i *ngIf="caretDown2" class="fas fa-caret-down"></i></th>
+            <th (click)="numbers()">Number <i *ngIf="caretDown3" class="fas fa-caret-down"></i></th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let name of arrPerson | search:person  ;  let i = index;">
+                <td>{{name.firstname | titlecase}}</td>
+                <td>{{name.lastname | titlecase}}</td>
+                <td>{{name.number}}</td>
+                <td><button class="btn btn-warning" (click)="editPerson(i)" (click)="openEdit()">Edit</button></td>
+                <td><button class="btn btn-danger" (click)="deletePerson(i)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add phone</h4>
+            </div>
+            <div class="modal-body">
+                    <input type="text" placeholder="first name goest here" class="form-control" [(ngModel)]="firstname">
+                    <input type="text" placeholder="last name goest here" class="form-control" [(ngModel)]="lastname">
+                    <input type="text" placeholder="number name goest here" class="form-control" [(ngModel)]="number">         
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="closePopup()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyleEdit}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add phone</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="first name goest here" class="form-control" [(ngModel)]="firstnameEdit">
+                <input type="text" placeholder="last name goest here" class="form-control" [(ngModel)]="lastnameEdit">
+                <input type="text" placeholder="number name goest here" class="form-control" [(ngModel)]="numberEdit">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="closeEdit()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

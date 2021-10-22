@@ -1,0 +1,10 @@
+form{
+    display: flex;
+    justify-content: space-between;
+    input:nth-child(1){
+        margin: 0 10px 0 0 ;
+    }
+    input:nth-child(2){
+        width: 20%;
+    }
+}

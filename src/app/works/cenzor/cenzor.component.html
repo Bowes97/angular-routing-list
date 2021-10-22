@@ -1,0 +1,16 @@
+<div class="main">
+    <div class="general">
+        <p class="words">Bad words: <span *ngFor="let item of arrBadWords; let i=index">{{ arrBadWords[i] }},</span>
+        </p>
+        <form class="f1">
+            <input type="text" [(ngModel)]="text" name="text" id="" placeholder="word here..." class="text">
+            <input (click)="add()" type="button" name="" id="" value="Add" class="add btn">
+            <input (click)="reset()" type="button" name="" id="" value="Reset" class="reset btn">
+        </form>
+        <form>
+            <textarea [(ngModel)]="area" name="area" id="" cols="30" rows="10" class="area"
+                placeholder="text here.."></textarea>
+        </form>
+        <button (click)="update()" class="update">Cenzor</button>
+    </div>
+</div>

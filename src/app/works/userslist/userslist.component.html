@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="left-side">
+        <form name="registr">
+            <p>Login</p>
+            <input type="text" [(ngModel)]="login" name="login" placeholder="Enter login">
+            <p>Password</p>
+            <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
+            <p>Email Address</p>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Enter email">
+            <input (click)="click()" type="button" value="Add" class="add" *ngIf="isEdit">
+            <input (click)="saveName()" type="button" value="Save " class="add blue" *ngIf="!isEdit">
+        </form>
+    </div>
+    <div class="right-side">
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Login</td>
+                    <td>Password</td>
+                    <td>Email</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of arrPerson; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{person.login}}</td>
+                    <td>{{person.password}}</td>
+                    <td>{{person.email}}</td>
+                    <td><button (click)="editPerson(i)"
+                            style="background-color: orange; border: 0px; border-radius: 5px;">Edit</button></td>
+                    <td><button [disabled]="!isEdit" (click)="deletePerson(i)"
+                            style="background-color: red; border: 0px; border-radius: 5px;">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div>

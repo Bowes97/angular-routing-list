@@ -1,0 +1,47 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.left-side, .right-side{
+    width: 45%;
+    margin: 60px 0;
+}
+p{
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+p:nth-of-type(1){
+    margin-top: 0;
+}
+hr:nth-of-type(1){
+    margin: 0 0 8px 0;
+}
+input{
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 40px;
+    font-size: 20px;
+}
+input:focus{
+    outline: lightblue 1px;
+}
+.add{
+    margin: 32px 0 ;
+    width: 35%;
+    background-color: lightgreen;
+    border: 0ch;
+}
+.blue{
+    background-color: lightblue;
+}
+td{
+    width: 20%;
+    text-align: center;
+}
+hr{
+    width: 100%;
+}
